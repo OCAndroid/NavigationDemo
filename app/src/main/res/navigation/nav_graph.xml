@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navGraph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/itemListFragment"
+        android:name="org.ocandroid.navigationdemo.ItemFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_item_list" >
+
+        <action
+            android:id="@+id/action_item_to_itemDetails"
+            app:destination="@id/itemDetailsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/itemDetailsFragment"
+        android:name="org.ocandroid.navigationdemo.ItemDetailsFragment"
+        android:label="Item List"
+        tools:layout="@layout/fragment_item_details" >
+
+        <argument
+            android:name="itemId"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="org.ocandroid.navigationdemo.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+</navigation>
